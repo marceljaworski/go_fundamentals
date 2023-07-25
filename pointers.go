@@ -6,7 +6,7 @@ func main() {
 	var address *int  // declare an int pointer
 	number := 42      // int
 	address = &number // address stores the memory address of number
-	value := *address // dereferencing the value
+	value := *address // dereferencing the value: obtain from (a pointer) the address of a data item held in another location.
 
 	fmt.Printf("address: %v\n", address) // address: 0xc0000ae008
 	fmt.Printf("value: %v\n", value)     // value: 42
