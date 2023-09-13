@@ -1,0 +1,17 @@
+go 1.21.1
+
+use (
+	./arrays
+	./arrays_refactored
+	./concurrency
+	./control_flow
+	./maps
+	./packages
+	./pointers
+	./slices
+	./structs
+	./switch_cases
+	./types
+	./variables
+	./while_loop
+)
