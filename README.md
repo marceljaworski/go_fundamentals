@@ -1,4 +1,6 @@
-# Go fundamentals packages
+# Go fundamentals
+
+## create packages
 
 `go work init ./packages`
 
