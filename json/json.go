@@ -12,8 +12,9 @@ type myJSON struct {
 	StringValue     string    `json:"stringValue"`
 	DateValue       time.Time `json:"dateValue"`
 	ObjectValue     *myObject `json:"objectValue"`
-	NullStringValue *string   `json:"nullStringValue"`
+	NullStringValue *string   `json:"nullStringValue,omitempty"`
 	NullIntValue    *int      `json:"nullIntValue"`
+	EmptyString     string    `json:"emptyString,omitempty"`
 }
 type myObject struct {
 	ArrayValue []int `json:"arrayValue"`
@@ -40,4 +41,30 @@ func main() {
 	}
 
 	fmt.Printf("json data: %s\n", jsonData)
+
+	jsonData2 := `
+		{
+			"intValue":1234,
+			"boolValue":true,
+			"stringValue":"hello!",
+			"dateValue":"2022-03-02T09:10:00Z",
+			"objectValue":{
+				"arrayValue":[1,2,3,4]
+			},
+			"nullStringValue":null,
+			"nullIntValue":null,
+			"extraValue":4321
+		}
+	`
+
+	var data2 *myJSON
+	/*err := */ json.Unmarshal([]byte(jsonData2), &data2)
+	if err != nil {
+		fmt.Printf("could not unmarshal json: %s\n", err)
+		return
+	}
+
+	fmt.Printf("json struct: %#v\n", data)
+	fmt.Printf("dateValue: %#v\n", data.DateValue)
+	fmt.Printf("objectValue: %#v\n", data.ObjectValue)
 }
