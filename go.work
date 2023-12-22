@@ -5,6 +5,7 @@ use (
 	./arrays_refactored
 	./concurrency
 	./control_flow
+	./json
 	./maps
 	./packages
 	./pointers
